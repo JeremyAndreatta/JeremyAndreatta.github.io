@@ -1,6 +1,24 @@
 
 
-npm init vite app-name
+// npm init vite app-name
 
-choose react and then typescript SWC
+// choose react and then typescript SWC
 
+// if using react three fibre
+// make sure to also install three js and types
+// npm install --save three
+// npm i --save-dev @types/three
+
+
+
+//     const handleMouseMove = (event: MouseEvent) => {
+//       const { clientX, clientY } = event;
+//       const { innerWidth, innerHeight } = window;
+//       const xPercent = (clientX / innerWidth) * 100;
+//       const yPercent = (clientY / innerHeight) * 100;
+
+//       console.log("mouse at", xPercent, yPercent);
+
+//       document.body.style.background = `radial-gradient(circle at ${xPercent}% ${yPercent}%, #110001, #000001)`;
+//       document.body.style.background = `radial-gradient(circle at ${xPercent}% ${yPercent}%, #110001, #000001)`;
+//     };
