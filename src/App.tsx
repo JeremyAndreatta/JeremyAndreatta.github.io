@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import './index.css'; // Import Tailwind CSS
 import 'font-awesome/css/font-awesome.min.css';
+import {isMobile} from 'react-device-detect';
+
 
 function App() {
   const [leftSideButtons, setLeftSideButtons] = useState(true);
@@ -45,6 +47,10 @@ function App() {
   //Copy email to clipboard button
   const copyEmail = () => {
     navigator.clipboard.writeText("j.andreatta@hotmail.com");
+    // if on mobile show alert
+    if (isMobile) {
+      alert("Email Copied");
+    }
   }
 
   const emailButton = {
@@ -100,7 +106,7 @@ function App() {
               {links}
             </div>
           )}
-          <div>
+          <div className='flex flex-col self-center'>
             <div className='flex flex-row flex-wrap -mt-5'>
               <h1 className="gradient-text lg:text-[64px] text-[50px] transition-all">Jeremy&nbsp;</h1>
               <h1 className="gradient-text lg:text-[64px] text-[50px] transition-all">Andreatta</h1>

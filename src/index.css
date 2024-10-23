@@ -15,7 +15,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: #16143b;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -92,10 +92,10 @@ h3 {
   outline: 4px auto -webkit-focus-ring-color;
 } */
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #16143b;
   }
 
   a:hover {
@@ -128,4 +128,10 @@ h3 {
   padding: 20px;
   margin: 10px;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Set the background color for the html and body elements */
+.html .root {
+  background-color: #16143b;
+  background:#16143b ;
 }
