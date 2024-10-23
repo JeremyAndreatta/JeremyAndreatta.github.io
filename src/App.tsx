@@ -63,7 +63,7 @@ function App() {
   const emailButtonHtml = (
     <div className='pr-10 py-1'>
       <button
-        onClick={emailButton.action} className="relative group normal-button flex items-center justify-center text-white text-[25px] w-12 h-12 leading-1" onClick={emailButton.action}>
+        onClick={emailButton.action} className="relative group normal-button flex items-center justify-center text-white text-[25px] w-12 h-12 leading-1">
         <i className={emailButton.icon}></i>
         <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-2 text-xs text-white bg-[var(--accent-color)] rounded opacity-0 group-focus:opacity-100 transition-opacity duration-300">
           Email&nbsp;Copied
