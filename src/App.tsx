@@ -12,6 +12,8 @@ function App() {
 
   const [leftSideButtons, setLeftSideButtons] = useState(true);
 
+  document.body.style.background = `radial-gradient(circle at ${0}% ${0}%, var(--background-secondary-color), var(--background-color))`;
+
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       const { clientX, clientY } = event;
