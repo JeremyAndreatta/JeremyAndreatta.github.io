@@ -1,15 +1,9 @@
 import { useState, useEffect } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 import './index.css'; // Import Tailwind CSS
 import 'font-awesome/css/font-awesome.min.css';
 
-import { Canvas } from '@react-three/fiber';
-
 function App() {
-  const [count, setCount] = useState(0);
-
   const [leftSideButtons, setLeftSideButtons] = useState(true);
 
   document.body.style.background = `radial-gradient(circle at ${0}% ${0}%, var(--background-secondary-color), var(--background-color))`;
@@ -59,9 +53,40 @@ function App() {
     icon: "fa fa-envelope aspect-square"
   }
 
-  const toggleIconsOnLeft = () => {
-    setLeftSideButtons(!leftSideButtons);
+  const toggleIconsOnLeft = (e: any) => {
+    if (e.target.tagName.toLowerCase() !== 'button' && !e.target.closest('button')) {
+      setLeftSideButtons(!leftSideButtons);
+    }
   }
+
+
+  const emailButtonHtml = (
+    <div className='pr-10 py-1'>
+      <button
+        onClick={emailButton.action} className="relative group normal-button flex items-center justify-center text-white text-[25px] w-12 h-12 leading-1" onClick={emailButton.action}>
+        <i className={emailButton.icon}></i>
+        <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-2 text-xs text-white bg-[var(--accent-color)] rounded opacity-0 group-focus:opacity-100 transition-opacity duration-300">
+          Email&nbsp;Copied
+        </span>
+      </button>
+    </div>
+  )
+
+  var links = (
+    externalLinks.map((button, index) => {
+      return (
+        <a className="pr-10  py-1 flex " href={button.link} target="_blank" key={index} >
+          <button
+            onClick={(e) => e.stopPropagation()}
+            className="normal-button flex items-center justify-center text-white text-[25px] w-12 h-12 leading-1"
+          >
+            <i className={button.icon}></i>
+          </button>
+        </a>
+      );
+    })
+
+  )
 
   return (
     <>
@@ -71,25 +96,8 @@ function App() {
 
           {leftSideButtons && (
             <div className="card flex flex-col justify-center">
-              <div className='pr-10 py-1'>
-                <button className="relative group normal-button flex items-center justify-center text-white text-[25px] w-12 h-12 leading-1" onClick={emailButton.action}>
-                  <i className={emailButton.icon}></i>
-                  <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-2 text-xs text-white bg-[var(--accent-color)] rounded opacity-0 group-focus:opacity-100 transition-opacity duration-300">
-                    Email&nbsp;Copied
-                  </span>
-                </button>
-              </div>
-              {externalLinks.map((button, index) => {
-                return (
-                  <a className="pr-10  py-1 flex " href={button.link} target="_blank" key={index} >
-                    <button
-                      className="normal-button flex items-center justify-center text-white text-[25px] w-12 h-12 leading-1"
-                    >
-                      <i className={button.icon}></i>
-                    </button>
-                  </a>
-                );
-              })}
+              {emailButtonHtml}
+              {links}
             </div>
           )}
           <div>
@@ -98,31 +106,13 @@ function App() {
               <h1 className="gradient-text">Andreatta</h1>
             </div>
 
-            <h2 className='text-[var(--secondary-color)]'>mechatronics&nbsp;engineer&nbsp;/ software&nbsp;engineer&nbsp;/ game&nbsp;developer</h2>
+            <h2 className='text-[var(--secondary-color)]'>mechatronics&nbsp;engineer&nbsp;/ software&nbsp;engineer</h2>
             <h3>i like building things sometimes</h3>
 
             {!leftSideButtons && (
-
               <div className="card flex justify-center">
-                <div className='px-5'>
-                  <button className="relative group normal-button flex items-center justify-center text-white text-[25px] w-12 h-12 leading-1" onClick={emailButton.action}>
-                    <i className={emailButton.icon}></i>
-                    <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-2 text-xs text-white bg-[var(--accent-color)] rounded opacity-0 group-focus:opacity-100 transition-opacity duration-300">
-                      Email&nbsp;Copied
-                    </span>
-                  </button>
-                </div>
-                {externalLinks.map((button, index) => {
-                  return (
-                    <a className="px-5 flex " href={button.link} target="_blank" key={index} >
-                      <button
-                        className="normal-button flex items-center justify-center text-white text-[25px] w-12 h-12 leading-1"
-                      >
-                        <i className={button.icon}></i>
-                      </button>
-                    </a>
-                  );
-                })}
+                {emailButtonHtml}
+                {links}
               </div>
             )}
           </div>
