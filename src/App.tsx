@@ -21,6 +21,7 @@ function App() {
       const xPercent = (clientX / innerWidth) * 100;
       const yPercent = (clientY / innerHeight) * 100;
 
+
       // Adjust the size of the gradient circle by changing the size value (e.g., 20%).
       document.body.style.background = `radial-gradient(circle at ${xPercent}% ${yPercent}%, var(--background-secondary-color), var(--background-color))`;
     };
