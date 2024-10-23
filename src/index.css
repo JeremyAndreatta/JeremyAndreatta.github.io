@@ -9,6 +9,7 @@
 @tailwind utilities;
 
 :root {
+  background-color: #16143b;
   font-family: 'Concert One', Inter, syste\m-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 2.0;
   font-weight: 400;
@@ -48,7 +49,6 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  margin: 20px;
 }
 
 h1 {
@@ -66,8 +66,9 @@ h2 {
 
 h3 {
   font-size: 1.0em;
-  line-height: 3.0;
+  line-height: 1.5;
 }
+
 
 .normal-button {
   border-radius: 8px;

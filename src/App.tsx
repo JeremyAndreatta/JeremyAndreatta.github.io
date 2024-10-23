@@ -61,9 +61,9 @@ function App() {
 
 
   const emailButtonHtml = (
-    <div className='pr-10 py-1'>
+    <div className='mr-5 py-1'>
       <button
-        onClick={emailButton.action} className="relative group normal-button flex items-center justify-center text-white text-[25px] w-12 h-12 leading-1">
+        onClick={emailButton.action} className="relative group normal-button flex items-center justify-center transition-all text-white lg:text-[25px] text-[15px] lg:w-12 lg:h-12 w-10 h-10 leading-1">
         <i className={emailButton.icon}></i>
         <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-2 text-xs text-white bg-[var(--accent-color)] rounded opacity-0 group-focus:opacity-100 transition-opacity duration-300">
           Email&nbsp;Copied
@@ -75,10 +75,10 @@ function App() {
   var links = (
     externalLinks.map((button, index) => {
       return (
-        <a className="pr-10  py-1 flex " href={button.link} target="_blank" key={index} >
+        <a className="mr-5  py-1 flex " href={button.link} target="_blank" key={index} >
           <button
             onClick={(e) => e.stopPropagation()}
-            className="normal-button flex items-center justify-center text-white text-[25px] w-12 h-12 leading-1"
+            className="normal-button flex items-center justify-center text-white transition-all lg:text-[25px] text-[15px] lg:w-12 lg:h-12 w-10 h-10 leading-1 p-0 "
           >
             <i className={button.icon}></i>
           </button>
@@ -102,12 +102,12 @@ function App() {
           )}
           <div>
             <div className='flex flex-row flex-wrap -mt-5'>
-              <h1 className="gradient-text">Jeremy&nbsp;</h1>
-              <h1 className="gradient-text">Andreatta</h1>
+              <h1 className="gradient-text lg:text-[64px] text-[50px] transition-all">Jeremy&nbsp;</h1>
+              <h1 className="gradient-text lg:text-[64px] text-[50px] transition-all">Andreatta</h1>
             </div>
 
-            <h2 className='text-[var(--secondary-color)]'>mechatronics&nbsp;engineer&nbsp;/ software&nbsp;engineer</h2>
-            <h3>i like building things sometimes</h3>
+            <h2 className='text-[var(--secondary-color)] text-xl lg:text-2xl transition-all'>mechatronics&nbsp;engineer&nbsp;/ software&nbsp;engineer</h2>
+            <h3 className='text-[var(--text-color)]      text-sm lg:text-lg transition-all leading-8'>i like building things sometimes</h3>
 
             {!leftSideButtons && (
               <div className="card flex justify-center">
