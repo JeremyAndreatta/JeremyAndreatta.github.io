@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   overflow: hidden;
@@ -12,4 +11,41 @@ body {
 #canvas-container {
   width: 800px;
   height: 600px;
+}
+
+
+/* Define custom classes for the lines and hover effects */
+.line-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-align: right;
+}
+
+.line-container.active {
+
+  color: var(--primary-color);
+  /* text-shadow: #000000FF 0px 0 1px; */
+}
+
+.line-container:hover {
+
+  color: var(--primary-color);
+  text-shadow: var(--primary-color) 0px 0 2px;
+  /* text-shadow: #000000FF 0px 0 1px; */
+}
+
+.line {
+  flex-grow: 1;
+  border-top: 1px solid;
+  /* border-color: gray; */
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+  min-width: 50px;
+}
+
+.line-container:hover .line {
+  box-shadow: var(--primary-color) 0px 0 3px;
 }
